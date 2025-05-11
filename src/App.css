@@ -45,7 +45,7 @@ h1, h2 {
 
 /* Поля ввода и кнопки */
 input[type="number"], input[type="date"] {
-  padding: 10px;
+  padding: 8px;
   margin: 10px 5px;
   width: 150px;
   border: 1px solid #ddd;
@@ -147,6 +147,7 @@ button.delete-btn:hover {
   .form-container input[type="date"],
   .filter-container input[type="date"] {
     width: 100%;
+    font-size: 0.9em;
   }
 
   .app-container {

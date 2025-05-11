@@ -151,20 +151,20 @@ const App = () => {
       <div className="filter-container">
         <h2>Фильтровать по дате</h2>
         <div className="date-filter">
+          <span className="filter-text">с</span>
           <input
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
             className="date-input"
           />
-          <span className="filter-text">с</span>
+            <span className="filter-text">по</span>
           <input
             type="date"
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
             className="date-input"
           />
-          <span className="filter-text">по</span>
         </div>
         <div className="filter-buttons">
           <button onClick={applyFilter}>Применить фильтр</button>
