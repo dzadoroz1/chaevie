@@ -54,32 +54,9 @@ input[type="number"], input[type="date"] {
   box-sizing: border-box;
 }
 
-input[type="date"] {
-  -webkit-appearance: none;
-  appearance: none;
-  min-height: 38px;
-  position: relative;
+input[type="date"]::placeholder {
+  color: #aaa;
 }
-
-/* Force display of date placeholder */
-input[type="date"]:before {
-  content: attr(placeholder);
-  position: absolute;
-  color: #666;
-  width: calc(100% - 20px);
-  line-height: 24px;
-  padding: 6px;
-}
-
-input[type="date"]:focus:before,
-input[type="date"]:valid:before {
-  display: none;
-}
-
-/* Hide default placeholder on iOS */
-input[type="date"]::-webkit-datetime-edit-fields-wrapper { opacity: 1; }
-input[type="date"]::-webkit-datetime-edit { padding: 6px; }
-input[type="date"]::-webkit-calendar-picker-indicator { margin-right: 4px; }
 
 /* Кнопки */
 button {
@@ -167,20 +144,6 @@ button.delete-btn:hover {
   margin-top: 10px;
 }
 
-/* Группы полей ввода даты */
-.date-input-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 5px 0;
-}
-
-.date-input-group label {
-  font-size: 0.9em;
-  color: #666;
-  margin-bottom: 4px;
-}
-
 /* Адаптивность */
 @media (max-width: 600px) {
   .form-container input[type="number"],
@@ -224,15 +187,8 @@ button.delete-btn:hover {
   .date-filter {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .date-input-group {
-    width: 100%;
-  }
-  
-  .date-input-group input[type="date"] {
-    width: calc(100% - 10px);
+    align-items: stretch;
+    gap: 5px;
   }
 
   .filter-text {
