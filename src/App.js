@@ -140,6 +140,7 @@ const App = () => {
         />
         <input
           type="date"
+          placeholder="Дата"
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
@@ -153,11 +154,13 @@ const App = () => {
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
         />
+        <span>с</span>
         <input
           type="date"
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
         />
+        <span>по</span>
         <button onClick={applyFilter}>Применить фильтр</button>
         <button onClick={resetFilter}>Сбросить фильтр</button>
       </div>

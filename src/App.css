@@ -53,6 +53,11 @@ input[type="number"], input[type="date"] {
   font-size: 1em;
 }
 
+input[type="date"]::placeholder {
+  color: #aaa;
+}
+
+/* Кнопки */
 button {
   padding: 10px 15px;
   margin: 10px;
@@ -150,5 +155,10 @@ button.delete-btn:hover {
   button {
     width: 100%;
     margin-top: 10px;
+  }
+
+  /* Делаем полоску с суммой чаевых адаптивной */
+  .total-amount {
+    font-size: 1.2em;
   }
 }
