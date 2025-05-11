@@ -1,0 +1,154 @@
+/* Установим серый фон на всю страницу */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ececec; /* мягкий серый фон */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Основной контейнер */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Заголовки */
+h1, h2 {
+  color: #d33f49;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Блоки */
+.form-container, .filter-container, .tips-list {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Заголовок блока формы */
+.form-container h2 {
+  margin-top: 0;
+  font-size: 1.3em;
+  color: #d33f49;
+  text-align: center;
+}
+
+/* Поля ввода и кнопки */
+input[type="number"], input[type="date"] {
+  padding: 10px;
+  margin: 10px 5px;
+  width: 150px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #d33f49, #f44b65);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #b12e3a, #c8384f);
+  transform: scale(1.02);
+}
+
+/* Фильтрация */
+.filter-container input[type="date"] {
+  width: 150px;
+  margin: 10px 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Список чаевых */
+.tips-list {
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 8px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+li:hover {
+  background: #f0f0f0;
+}
+
+button.delete-btn {
+  background-color: #f44b65;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.delete-btn:hover {
+  background-color: #d33f49;
+}
+
+/* Общая сумма и дата диапазона */
+.total-amount {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #d33f49;
+  text-align: center;
+}
+
+.date-range {
+  text-align: center;
+  font-size: 0.9em;
+  color: gray;
+  margin-top: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .form-container input[type="number"],
+  .form-container input[type="date"],
+  .filter-container input[type="date"] {
+    width: 100%;
+  }
+
+  .app-container {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
