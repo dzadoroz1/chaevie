@@ -139,34 +139,38 @@ const App = () => {
           onChange={(e) => setAmount(e.target.value)}
           className="input-amount"
         />
-        <input
-          type="date"
-          placeholder="Дата"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
+        <div className="date-input-group">
+          <label>Дата</label>
+          <input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+        </div>
         <button onClick={addTip}>Добавить</button>
       </div>
 
       <div className="filter-container">
         <h2>Фильтровать по дате</h2>
         <div className="date-filter">
-          <span className="filter-text">с</span>
-          <input
-            type="date"
-            placeholder="С"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-            className="date-input"
-          />
-            <span className="filter-text">по</span>
-          <input
-            type="date"
-            placeholder="По"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-            className="date-input"
-          />
+          <div className="date-input-group">
+            <label>С</label>
+            <input
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              className="date-input"
+            />
+          </div>
+          <div className="date-input-group">
+            <label>По</label>
+            <input
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              className="date-input"
+            />
+          </div>
         </div>
         <div className="filter-buttons">
           <button onClick={applyFilter}>Применить фильтр</button>
