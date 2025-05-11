@@ -154,6 +154,7 @@ const App = () => {
           <span className="filter-text">с</span>
           <input
             type="date"
+            placeholder="С"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
             className="date-input"
@@ -161,6 +162,7 @@ const App = () => {
             <span className="filter-text">по</span>
           <input
             type="date"
+            placeholder="По"
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
             className="date-input"

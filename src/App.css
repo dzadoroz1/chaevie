@@ -57,35 +57,29 @@ input[type="number"], input[type="date"] {
 input[type="date"] {
   -webkit-appearance: none;
   appearance: none;
+  min-height: 38px;
+  position: relative;
 }
 
-input[type="date"]::-webkit-datetime-edit { 
+/* Force display of date placeholder */
+input[type="date"]:before {
+  content: attr(placeholder);
+  position: absolute;
   color: #666;
+  width: calc(100% - 20px);
+  line-height: 24px;
+  padding: 6px;
 }
 
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-  opacity: 1;
+input[type="date"]:focus:before,
+input[type="date"]:valid:before {
+  display: none;
 }
 
-input[type="date"]::-webkit-datetime-edit-fields-wrapper {
-  background-color: transparent;
-}
-
-input[type="date"]::-webkit-datetime-edit-text,
-input[type="date"]::-webkit-datetime-edit-month-field,
-input[type="date"]::-webkit-datetime-edit-day-field,
-input[type="date"]::-webkit-datetime-edit-year-field {
-  color: #666;
-}
-
-input[type="date"]:invalid::-webkit-datetime-edit {
-  color: #666;
-}
-
-input[type="date"]::placeholder {
-  color: #aaa;
-}
+/* Hide default placeholder on iOS */
+input[type="date"]::-webkit-datetime-edit-fields-wrapper { opacity: 1; }
+input[type="date"]::-webkit-datetime-edit { padding: 6px; }
+input[type="date"]::-webkit-calendar-picker-indicator { margin-right: 4px; }
 
 /* Кнопки */
 button {
