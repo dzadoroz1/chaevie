@@ -137,6 +137,7 @@ const App = () => {
           placeholder="Сумма"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+          className="input-amount"
         />
         <input
           type="date"
@@ -149,20 +150,26 @@ const App = () => {
 
       <div className="filter-container">
         <h2>Фильтровать по дате</h2>
-        <input
-          type="date"
-          value={startDate}
-          onChange={(e) => setStartDate(e.target.value)}
-        />
-        <span>с</span>
-        <input
-          type="date"
-          value={endDate}
-          onChange={(e) => setEndDate(e.target.value)}
-        />
-        <span>по</span>
-        <button onClick={applyFilter}>Применить фильтр</button>
-        <button onClick={resetFilter}>Сбросить фильтр</button>
+        <div className="date-filter">
+          <input
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            className="date-input"
+          />
+          <span className="filter-text">с</span>
+          <input
+            type="date"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+            className="date-input"
+          />
+          <span className="filter-text">по</span>
+        </div>
+        <div className="filter-buttons">
+          <button onClick={applyFilter}>Применить фильтр</button>
+          <button onClick={resetFilter}>Сбросить фильтр</button>
+        </div>
       </div>
 
       {/* Список чаевых теперь можно прокручивать */}

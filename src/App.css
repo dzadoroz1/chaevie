@@ -127,10 +127,11 @@ button.delete-btn:hover {
 
 /* Общая сумма и дата диапазона */
 .total-amount {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 700;
   color: #d33f49;
   text-align: center;
+  margin-top: 20px;
 }
 
 .date-range {
@@ -160,5 +161,30 @@ button.delete-btn:hover {
   /* Делаем полоску с суммой чаевых адаптивной */
   .total-amount {
     font-size: 1.2em;
+  }
+
+  /* Исправление для фильтра: "с" и "по" */
+  .date-range {
+    font-size: 0.9em;
+    color: gray;
+    margin-top: 10px;
+  }
+
+  /* Фильтрация дат: корректное отображение текста "с" и "по" */
+  .filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-container .filter-text {
+    font-size: 1em;
+    color: gray;
+  }
+}
+
+@media (max-width: 768px) {
+  .total-amount {
+    font-size: 1.2em; /* Сделаем сумму чаевых более компактной */
   }
 }
