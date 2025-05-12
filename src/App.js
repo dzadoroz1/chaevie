@@ -128,7 +128,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <h1>Чаевые</h1>
+      <h1>Привет, Ксения!</h1>
 
       <div className="form-container">
         <h2>Добавить новую запись</h2>
@@ -145,7 +145,7 @@ const App = () => {
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
-        <button onClick={addTip}>Добавить</button>
+        <button type="submit" className="add-btn" onClick={addTip}>Добавить</button>
       </div>
 
       <div className="filter-container">
@@ -167,8 +167,8 @@ const App = () => {
           />
         </div>
         <div className="filter-buttons">
-          <button onClick={applyFilter}>Применить фильтр</button>
-          <button onClick={resetFilter}>Сбросить фильтр</button>
+          <button className="apply-filter" onClick={applyFilter}>Применить фильтр</button>
+          <button className="reset-filter" onClick={resetFilter}>Сбросить фильтр</button>
         </div>
       </div>
 
@@ -178,7 +178,7 @@ const App = () => {
           {tips.map((tip) => (
             <li key={tip.id}>
               {formatDate(tip.date)} - {tip.amount} €
-              <button onClick={() => deleteTip(tip.id)}>Удалить</button>
+              <button className="delete-btn" onClick={() => deleteTip(tip.id)}>Удалить</button>
             </li>
           ))}
         </ul>

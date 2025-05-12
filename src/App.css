@@ -18,7 +18,10 @@ body {
 
 /* Заголовки */
 h1, h2 {
-  color: #d33f49;
+  background: linear-gradient(135deg, #5939db, #6a46ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-family: 'Arial', sans-serif;
   font-weight: 700;
   text-align: center;
@@ -39,7 +42,6 @@ h1, h2 {
 .form-container h2 {
   margin-top: 0;
   font-size: 1.3em;
-  color: #d33f49;
   text-align: center;
 }
 
@@ -58,12 +60,11 @@ input[type="date"]::placeholder {
   color: #aaa;
 }
 
-/* Кнопки */
+/* Кнопки - общие стили */
 button {
   padding: 10px 15px;
   margin: 10px;
   cursor: pointer;
-  background: linear-gradient(135deg, #d33f49, #f44b65);
   border: none;
   border-radius: 5px;
   color: white;
@@ -71,9 +72,42 @@ button {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-  background: linear-gradient(135deg, #b12e3a, #c8384f);
+/* Зеленые градиентные кнопки (добавить и применить фильтр) */
+button[type="submit"],
+button.add-btn,
+button.apply-filter {
+  background: linear-gradient(135deg, #009f41, #00b74b);
+}
+
+button[type="submit"]:hover,
+button.add-btn:hover,
+button.apply-filter:hover {
+  background: linear-gradient(135deg, #008737, #009f41);
   transform: scale(1.02);
+}
+
+/* Красные градиентные кнопки (удалить и сбросить фильтр) */
+button.delete-btn,
+button.reset-filter {
+  background: linear-gradient(135deg, #e00825, #fa092a);
+}
+
+button.delete-btn:hover,
+button.reset-filter:hover {
+  background: linear-gradient(135deg, #c70721, #e00825);
+  transform: scale(1.02);
+}
+
+/* Градиентный текст */
+.date-range {
+  background: linear-gradient(135deg, #5939db, #6a46ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 10px;
+  font-weight: 500;
 }
 
 /* Фильтрация */
@@ -113,35 +147,31 @@ li:hover {
 }
 
 button.delete-btn {
-  background-color: #f44b65;
+  background-color: #fa092a;
   color: white;
   border: none;
-  padding: 5px 10px;
-  font-size: 0.8em;
+  padding: 6px 12px;
+  font-size: 0.9em;
   border-radius: 5px;
   cursor: pointer;
-  min-width: 60px;
-  max-width: 80px;
+  min-width: 65px;
+  max-width: 85px;
 }
 
 button.delete-btn:hover {
-  background-color: #d33f49;
+  background-color: #e00825;
 }
 
 /* Общая сумма и дата диапазона */
 .total-amount {
   font-size: 1.2em;
   font-weight: 700;
-  color: #d33f49;
   text-align: center;
   margin-top: 20px;
-}
-
-.date-range {
-  text-align: center;
-  font-size: 0.9em;
-  color: gray;
-  margin-top: 10px;
+  background: linear-gradient(135deg, #5939db, #6a46ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Адаптивность */
